@@ -15,6 +15,9 @@ h = X * theta;
 %               You should set J to the c
 
 J = (1/(2*m))* (sum((h-y).^2));
+grad = (1/m) * X' * (h-y);
+theta(1,:) = zeros(theta(1,:));
+grad = grad + (lambda/m)*theta;
 
 % =========================================================================
 
